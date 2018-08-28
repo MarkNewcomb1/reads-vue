@@ -17,19 +17,6 @@ export default {
     components: {
     Header,
     BooksComponent
-    },
-    data() {
-        return {
-            books: null,
-            apiURL: "https://galvanize-reads-mark.herokuapp.com/books"
-        };
-    },
-    mounted() {
-    fetch(this.apiURL)
-        .then(response => response.json())
-        .then(response => {
-        this.books = response;
-        });
     }
 };
 </script>

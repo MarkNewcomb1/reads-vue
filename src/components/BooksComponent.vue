@@ -1,8 +1,10 @@
 <template>
     <ul>
     <li v-for="book in books" :key="book.id">
+        <img :src=book.bookCoverUrl />
         <h2>{{ book.bookTitle }}</h2>
         <h3>{{ book.bookGenre }}</h3>
+        <span>By {{ book.author1FirstName}} {{ book.author1LastName}}</span><span v-if="book.author2FirstName !== null">, {{ book.author2FirstName}} {{ book.author2LastName}}</span><span v-if="book.author3FirstName !== null">, {{ book.author3FirstName}} {{ book.author3LastName}}</span>
         <p>{{ book.bookDescription }}</p>
     </li>
     </ul>
@@ -10,8 +12,6 @@
 </template>
 
 <script>
-import router from '../router';
-
 export default {
   name: 'BooksComponent',
   data() {
@@ -31,4 +31,7 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  font-style: italic;
+}
 </style>
