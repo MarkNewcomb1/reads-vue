@@ -32,4 +32,7 @@ export default {
     display: flex;
     justify-content: space-between;
 }
+.flex-column {
+    flex: 1;
+}
 </style>
